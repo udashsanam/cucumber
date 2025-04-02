@@ -39,4 +39,4 @@ public class UserCreateStepDefinitions {
     public void the_response_should_contain(String expectedMessage) {
         Assertions.assertTrue(("Successfully saved: "+user.getFullname()).equals(expectedMessage));
     }
-}gith
+}
