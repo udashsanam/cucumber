@@ -5,4 +5,8 @@ public class MyClass {
         // Some code to be executed
         System.out.println("Original Method");
     }
+
+    public String getParam(String x){
+        return "hello";
+    }
 }

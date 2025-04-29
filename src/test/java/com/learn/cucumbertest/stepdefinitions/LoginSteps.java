@@ -1,8 +1,10 @@
 package com.learn.cucumbertest.stepdefinitions;
 
+import com.learn.cucumbertest.repo.UserRepository;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -15,6 +17,8 @@ public class LoginSteps {
     private String displayedMessage;
 
     private boolean emptyCredential;
+
+    private UserRepository  userRepository;
 
     @Given("the user is on the login page")
     public void the_user_is_on_the_login_page() {
