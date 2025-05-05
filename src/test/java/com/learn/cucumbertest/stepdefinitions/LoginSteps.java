@@ -4,13 +4,13 @@ import com.learn.cucumbertest.repo.UserRepository;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.springframework.beans.factory.annotation.Autowired;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
 
 public class LoginSteps {
-    
+
     private boolean isLoginPage;
     private boolean credentialsAreValid;
     private boolean isRedirectedToHomepage;

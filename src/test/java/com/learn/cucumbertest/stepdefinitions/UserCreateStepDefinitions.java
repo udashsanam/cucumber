@@ -1,27 +1,24 @@
 package com.learn.cucumbertest.stepdefinitions;
 
-import com.learn.cucumbertest.controller.UserController;
 import com.learn.cucumbertest.dto.UserCreatDto;
 import com.learn.cucumbertest.entity.User;
 import com.learn.cucumbertest.repo.UserRepository;
 import com.learn.cucumbertest.service.UserService;
-import io.cucumber.java.en.*;
-
-import io.restassured.RestAssured;
-import io.restassured.response.Response;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import io.restassured.specification.RequestSpecification;
-import org.junit.jupiter.api.Assertions;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.http.HttpStatus;
 
 import java.util.HashMap;
 import java.util.Map;
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
+import static org.junit.Assert.assertTrue;
+
+//@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 public class UserCreateStepDefinitions {
 
     private RequestSpecification request;
@@ -50,7 +47,7 @@ public class UserCreateStepDefinitions {
         Mockito.when(userRepository.saveuser(Mockito.any())).thenReturn(user);
         String response = userController.userSave(new UserCreatDto());
 
-        Assertions.assertTrue(response.contains("test"));
+        assertTrue(response.contains("test"));
 
 
     }
@@ -63,6 +60,6 @@ public class UserCreateStepDefinitions {
 
     @Then("the response should contain {string}")
     public void the_response_should_contain(String expectedMessage) {
-        Assertions.assertTrue(("Successfully saved: "+user.getFullname()).equals(expectedMessage));
+        assertTrue(("Successfully saved: "+user.getFullname()).equals(expectedMessage));
     }
 }
